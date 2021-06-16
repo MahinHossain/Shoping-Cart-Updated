@@ -28,7 +28,7 @@ export default function Products({ addToCart1 }) {
           state.data.map((item) => (
             <div class="card heightwidth shadow-lg  ">
               {/* <Link to={`/product/${item.id}`} /> */}
-              <Link to={`/products/${item.id}`}>
+              <Link to={`/products/${item.id}`} className="text-danger">
                 <img
                   class="card-img-top imgheightwidth  "
                   src={item.image}
@@ -37,13 +37,13 @@ export default function Products({ addToCart1 }) {
                 <span class="tooltiptext">Tooltip text</span>
                 <h5 class="text heading">{item.title}</h5>
                 <h6 className="text-danger">$ {item.price}</h6>
-                <button
-                  onClick={() => addToCart1(item)}
-                  class="btn btn-outline-dark small"
-                >
-                  Add to cart
-                </button>
               </Link>
+              <button
+                onClick={() => addToCart1(item)}
+                class="btn btn-outline-dark small"
+              >
+                Add to cart
+              </button>
             </div>
           ))
         )}
